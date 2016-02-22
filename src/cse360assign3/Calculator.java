@@ -11,7 +11,7 @@ public class Calculator {
 
 	//private variable
 	private int total;
-	
+	String History ="0";
 	/**
 	 * Class Constructor
 	 */
@@ -31,6 +31,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total+ value;
+		History = History + " + " + value;
 	}
 	
 	/*
@@ -39,6 +40,7 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total = total - value;
+		History = History + " - " + value;
 	}
 	
 	/*
@@ -46,27 +48,31 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		History = History + " * " + value;
 	}
 	
 	/*
 	 * adds a divide operation
+	 * 
 	 */
 	
 	public void divide (int value) {
 		if (value == 0)
 		{
 			total = 0;
+			History = History + " / " + value;
 			return;
 		}
 		
 		
-		total = total / value;		
+		total = total / value;	
+		History = History + " / " + value;
 	}
 	
 	/*
 	 * get history displays command history
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory() {
+		return History;
 	}
 }

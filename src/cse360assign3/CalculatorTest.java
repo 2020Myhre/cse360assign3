@@ -3,6 +3,7 @@ package cse360assign3;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -78,7 +79,14 @@ public class CalculatorTest {
 	
 	@Test
 	public void testGetHistroy() {
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		calc.add(5);
+		calc.subtract(2);
+		calc.multiply(2);
+		calc.divide(0);
+		int value = calc.getTotal();
+		String returned = getHistory();
+		assertEquals(returned,"0 + 5 - 2 * 2 / 0 " );
 	}
 
 }
